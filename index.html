@@ -3,10 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-mhpbKVUOPCSocLzx2ElRISIORFRwr1ZbO9bAlowgM5kO7hnpRBe+brVj8NNPUiFs" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>To do list</title>
 </head>
 <body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4 text-center">To Do List</h1>
+          <p class="lead text-center">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <div class="col-md-6 offset-md-3">
+            <div class="input-group mb-3">
+              <input type="text" id="add-input" class="form-control" placeholder="Just Add your task" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary add-btn" type="button">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="col">
+        <hr class="hr-primary" />
+        <ol class="breadcrumb bread-primary float-right">
+          <button  class="btn btn-primary delete-todo"><i class="fa fa-newspaper-o"></i>Remove</button>
+            
+        </ol>
+    </div>
+    </div>
+    <div class="container pt-3">
+      <ul class="ks-cboxtags">
+
+      </ul>
+    </div>
+    <template id="todo-template">
+      <li class="todo"><input type="checkbox" id="checkboxOne" value="Rainbow Dash"><label></label></li>
+    </template>
   <script src="script.js"></script>  
 </body>
 </html>
