@@ -3,17 +3,22 @@ const addTodoBtn = document.querySelector('.add-btn'); // button add
 const deleteTodo = document.querySelector('.delete-todo'); // button delete
 const todoList = document.querySelector('.ks-cboxtags'); // liste pur l'instant vide ou le template sera implanté
 const todoTemplate = document.querySelector('#todo-template'); // template 
+const msg = document.querySelector('.alert'); 
 let id = 1; //id variable 
 
 newTodo.addEventListener('keyup' , (e) => {
     if (e.keyCode === 13 && inputValid()) {
         addTodo();
+    } else {
+        messageError();
     }
 });
 
 addTodoBtn.addEventListener('click' , () => {
     if (inputValid()) {
         addTodo();
+    } else {
+        messageError();
     }
 });
 
@@ -41,4 +46,18 @@ function addTodo() {
 
 function inputValid() {
     return newTodo.value !== ''
+}
+
+function messageError() {
+    if (newTodo.value === '') {
+        msg.classList.add('alert-danger');
+        msg.innerHTML = 'Please enter fields';
+       
+        setTimeout(() => {
+            msg.classList.remove('alert-danger');
+            msg.innerHTML = '';
+        }, 3000)
+       
+        
+    }
 }
